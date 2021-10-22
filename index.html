@@ -1,20 +1,23 @@
-<h1>---------Amy’s Project---------</h1>
-<html lang="zh-Hant-TW">
-    <head>
-        <title>wang's family</title>
-    </head>
-    <body>
-        <div class="container">
-          <p class="text-danger"></p>
-          <hr>
-          <div class="row">
-            <div class="col-lg-3 mb-3">
-              <a class="btn btn-primary btn-lg btn-block"href="2021.html" target="_blank">2021</a>
-            </div>
-          </div>
-          </hr>
-        </div>
-    </body>
+<html>
+  <head>
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=big5">
+  </head>
+
+  <body>
+    <hr>
+      <script>
+      function password() {
+        username="";
+        passwd="";
+        while (passwd=="")		// Get the password
+          passwd=prompt(username+"，您好！\n"+"請輸入密碼：", username+"的密碼");
+        if (passwd!="181126")
+          alert("密碼錯誤，不准進入！")
+        else
+          myWin=open("2021.html");
+      }
+      </script>
+      <a href="javascript:password()">秘密檔案</a>
+    <hr>
+  </body>
 </html>
-
-
