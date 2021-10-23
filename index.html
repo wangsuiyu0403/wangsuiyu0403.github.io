@@ -8,7 +8,6 @@
       <h1>wang's family</h1>
       <script>
       function password() {
-        username="";
         passwd="";
         while (passwd=="")		// Get the password
           passwd=prompt("password：");
@@ -19,6 +18,28 @@
       }
       </script>
       <a href="javascript:password()">secret_file</a>
+    <hr>
+  </body>
+</html>
+<html>
+  <head>
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=big5">
+  </head>
+
+  <body>
+    <hr>
+      <script>
+      function password() {
+        passwd="";
+        while (passwd=="")		// Get the password
+          passwd=prompt("password：");
+        if (passwd!="20121221")
+          alert("password wrong！")
+        else
+          myWin=open("secret.html");
+      }
+      </script>
+      <a href="javascript:password()">my project</a>
     <hr>
   </body>
 </html>
