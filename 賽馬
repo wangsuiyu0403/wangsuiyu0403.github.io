@@ -1,0 +1,47 @@
+import random
+import math
+total = 0
+abcd_list = ['1','2','3','4']
+horse_list = ['Asia','East Asia','Europe','Africa']
+while True:
+    try:
+        print('='*60)
+        ask = int(input('  1.Inquiring a bout the balance 2.Enter the race 3.Quit >'))
+        if ask == 1:
+            print('  surplus $',total)
+            ask2 = int(input('  1.stored value 2.quit >'))
+            if ask2 == 1:
+                ask3 = int(input('  How much stored value(金額輸入) :'))
+                total += ask3
+                print('  surplus $',total)
+            if ask2 == 2:
+                continue
+        if ask == 2:
+            if total == 0:
+                print('  '+'-'*18+'Insufficient  amount'+'-'*18)
+            else:
+                print('  {  magnification :  2 / 3 / 4 / 5 / 6 / 7 / 8 / 9 / 10  }')
+                magnification = int(input('  choose a magnification :'))
+                bet = int(input('  bet(金額輸入) :'))
+                if bet > total:
+                    print('  '+'-'*18+'Insufficient  amount'+'-'*18)
+                else:
+                    print('  {          1 Asia horse     ;2 East Asia horse          }')
+                    print('  {          3 Europe horse   ;4 Africa horse             }')
+                    horse_choose = input('  choose a horse(代碼輸入) :')
+                    horse_computer = random.choice(abcd_list)
+                    print('  victor hourse :',horse_list[int(horse_computer)-1])
+                    if horse_computer == horse_choose:
+                        print('  Earn $',bet*magnification)
+                        print('  surplus $',total + bet*magnification)
+                    else:
+                        print('  lose $',bet*magnification)
+                        if bet*magnification > total:
+                            print('  bankruptcy(破產)')
+                            break
+                        else:
+                            print('  surplus $',total - bet*magnification)
+        if ask == 3:
+            break
+    except EOFError:
+        break
